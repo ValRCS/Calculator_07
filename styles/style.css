@@ -1,3 +1,7 @@
+main {
+    display: grid;
+    grid-template: 100px 100px 100px 100px / 100px 100px 100px 100px;
+}
 div {
     background-color: aqua;
 }
