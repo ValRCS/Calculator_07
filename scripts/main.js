@@ -22,7 +22,8 @@ function main() {
 
 function onMouseDown(event) {
     console.log("You pressed some div"+event.target.id);
-    
+    const disp = document.getElementsByClassName('display')[0];
+    disp.innerText += event.target.id.slice(1);
     // console.log("Coordinates "+event.pageX+"Y:"+event.pageY);
 }
 
