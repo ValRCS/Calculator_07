@@ -1,6 +1,18 @@
-main {
+.display {
+    width: 68%;
+    text-align: right;
+}
+.memory {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-container {
+    width: 75%;
     display: grid;
-    grid-template: 100px 100px 100px 100px / 100px 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: repeat(6, 100px);
 }
 div {
     background-color: aqua;

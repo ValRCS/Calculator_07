@@ -1,4 +1,22 @@
+const state = {
+    result: 0
+};
+
 function main() {
+    console.log("Starting Calculator");
+    renderView();
+    setUpListeners();
+}
+
+function setUpListeners() {
+    console.log("Setting Up Listeners");
+}
+
+function renderView() {
+    document.querySelector(".display").innerText = state.result;
+}
+
+function oldmain() {
     console.log("Starting Calculator");
 
     const main = document.getElementById('App');
@@ -40,6 +58,8 @@ function main() {
 
 function onMouseDown(event) {
     console.log("You pressed some div"+event.target.id);
+
+    // alternative to below const disp = document.querySelector(".display");
     const disp = document.getElementsByClassName('display')[0];
     disp.innerText += event.target.id.slice(1);
     // console.log("Coordinates "+event.pageX+"Y:"+event.pageY);
