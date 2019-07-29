@@ -1,5 +1,7 @@
 const state = {
-    result: 0
+    result: 0,
+    current: "",
+    prev: ""
 };
 
 function main() {
@@ -27,6 +29,7 @@ function setUpListeners() {
 
 function renderView() {
     document.querySelector(".display").innerText = state.result;
+    
 }
 
 function oldmain() {
@@ -72,10 +75,28 @@ function oldmain() {
 function onMouseDown(event) {
     console.log("You pressed some div"+event.target.id);
 
+    switch (event.target.id) {
+        case "key-0":
+        case "key-1":
+        case "key-2":
+        case "key-3":
+        case "key-4":
+        case "key-5":
+        case "key-6":
+        case "key-7":
+        case "key-8":
+        case "key-9":
+            state.current += event.target.id[event.target.id.length-1];
+            console.log("CURRENT:"+state.current);
+            break;
+        default:
+            console.log("DEFAULT"+event.target.id);
+            break;
+    }
     // alternative to below const disp = document.querySelector(".display");
-    const disp = document.getElementsByClassName('display')[0];
-    disp.innerText += event.target.id.slice(1);
-    // console.log("Coordinates "+event.pageX+"Y:"+event.pageY);
+    
+    //FIXME possible that we might not need to render after each mouseDown
+    renderView();
 }
 
 main();
