@@ -12,12 +12,13 @@ function setUpListeners() {
     console.log("Setting Up Listeners");
     const allBtns = document.querySelectorAll("button"); //TODO query only App buttons
     // alternative const allBtns = document.getElementsByTagName("button")
-    for(let i=0; i < allBtns.length; i++) {
-        allBtns[i].onmousedown = onMouseDown;
-        //alternative addEventListener (look it up MDN)
-        //someElement.addEventListener("mousedown", onMouseDown);
-        //this way we can add many listeners to
-    }
+    // for(let i=0; i < allBtns.length; i++) {
+    //     allBtns[i].onmousedown = onMouseDown;
+    //     //alternative addEventListener (look it up MDN)
+    //     //someElement.addEventListener("mousedown", onMouseDown);
+    //     //this way we can add many listeners to
+    // }
+    allBtns.forEach((bt) => { bt.onmousedown = onMouseDown });
 }
 
 function renderView() {
