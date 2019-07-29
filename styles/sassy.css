@@ -1,0 +1,29 @@
+.my-normal-css {
+  background-color: beige;
+}
+
+.blog-post h1 {
+  text-align: center;
+  color: blue;
+  -webkit-box-shadow: 0px, 0px, 4px, red;
+  -ms-box-shadow: 0px, 0px, 4px, red;
+  box-shadow: 0px, 0px, 4px, red;
+  font-size: 4px;
+}
+
+.blog-post p {
+  font-size: 20px;
+}
+
+div {
+  background-color: red;
+}
+
+div .mycooldiv {
+  font-size: 2em;
+}
+
+div .mycooldiv #myspecialdiv {
+  color: black;
+}
+/*# sourceMappingURL=sassy.css.map */

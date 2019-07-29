@@ -1,0 +1,38 @@
+@import 'variables.scss';
+
+@mixin box-shadow($x, $y, $blur, $c){ 
+    -webkit-box-shadow: $x, $y, $blur, $c;
+    -moz-box-shadow: $x, $y, $blur, $c;
+    -ms-box-shadow: $x, $y, $blur, $c;
+    box-shadow: $x, $y, $blur, $c;
+    font-size: $x+4;
+}
+
+.my-normal-css {
+    background-color: beige;
+}
+
+.blog-post {
+    h1 {
+        text-align: center;
+        color: blue;
+        @include box-shadow(0px, 0px, 4px, $red-color);
+    }
+    p {
+        font-size: 20px;
+    }
+}
+
+
+div {
+    background-color: $red-color;
+
+    .mycooldiv {
+        font-size: 2em;
+
+        #myspecialdiv {
+            color: $black-color;
+        }
+    }
+
+}
