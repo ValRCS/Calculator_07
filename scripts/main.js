@@ -10,12 +10,30 @@ function main() {
         myDiv.id = "d"+i;
         myDiv.className = "btn";
         myDiv.className += " numbers";
-        
+
         main.appendChild(myDiv);
         myDiv.onmousedown = onMouseDown;
         // myDiv.onmouseleave = () => {console.log("Leaving some Div")};
     }
 
+    
+    // querySelectorAll returns an array
+    const sections = document.querySelectorAll(".display");
+    for(let i=0; i < sections.length; i++) {
+        const secEl = document.createElement('p');
+        secEl.innerText = "The display text";
+        sections[i].appendChild(secEl);
+    }
+    
+    // const section = document.querySelector(".display");
+    // section.appendChild(secEl);
+    // const section = document.querySelector("section");
+    // section.appendChild(secEl);
+
+
+    const lastEl = document.createElement('p');
+    lastEl.innerText = "The very last text";
+    document.body.appendChild(lastEl);
     // main.onmousemove = (ev) => {console.log("X:"+ev.pageX+"Y:"+ev.pageY)};
     console.log("Created Main");
 }
