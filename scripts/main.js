@@ -19,6 +19,10 @@ function setUpListeners() {
     //     //this way we can add many listeners to
     // }
     allBtns.forEach((bt) => { bt.onmousedown = onMouseDown });
+
+    //upListener
+    const myMCel = document.querySelector("#mkey-MC");
+    myMCel.onmouseup = (ev) => {console.log('You Released'+ev.target.innerText)};
 }
 
 function renderView() {
