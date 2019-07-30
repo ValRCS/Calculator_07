@@ -2,7 +2,8 @@ const state = {
     result: 0,
     current: "",
     prev: "",
-    action: ""
+    action: "",
+    lastkey: ""
 };
 
 function main() {
@@ -85,9 +86,19 @@ function oldmain() {
     console.log("Created Main");
 }
 
+function isLastKeyAction() {
+    switch (state.lastkey) {
+        case "key-MINUS":
+        case "key-PLUS":
+        case "key-EQUAL":
+            return true;
+    }
+    return false;
+    //TODO add more action keys
+}
 function onMouseDown(event) {
     console.log("You pressed some div"+event.target.id);
-
+    
     switch (event.target.id) {
         case "key-0":
         case "key-1":
@@ -99,9 +110,40 @@ function onMouseDown(event) {
         case "key-7":
         case "key-8":
         case "key-9":
+            if (isLastKeyAction()) {
+                state.current = "";
+            }
             state.current += event.target.id[event.target.id.length-1];
             console.log("CURRENT:"+state.current);
+            state.result = parseInt(state.current);
             break;
+        case "key-C":
+        case "key-CE":
+            state.result = 0;
+            state.prev = "";
+            state.current = "";
+            state.action = "";
+            state.result = state.current ? parseInt(state.current):0;
+            break;
+        case "key-PLUS":
+            state.prev = state.result;
+            state.action = "+";
+            break;
+        case "key-MINUS":
+            state.prev = state.result;
+            state.action = "-";
+            break;
+        case "key-EQUAL":
+            switch (state.action) {
+                case "+":
+                    state.result += state.prev;
+                    break;
+                case "-":
+                    // console.log(state.result);
+                    // console.log(state.prev);
+                    state.result = state.prev - state.result;
+                    break;
+            }
         default:
             console.log("DEFAULT"+event.target.id);
             break;
@@ -109,6 +151,7 @@ function onMouseDown(event) {
     // alternative to below const disp = document.querySelector(".display");
     
     //FIXME possible that we might not need to render after each mouseDown
+    state.lastkey = event.target.id;
     renderView();
 }
 
