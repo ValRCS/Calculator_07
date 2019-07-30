@@ -15,5 +15,5 @@
     grid-template-rows: repeat(6, 100px);
 }
 div {
-    background-color: aqua;
+    background-color: lightgray;
 }

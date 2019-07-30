@@ -38,7 +38,20 @@ function setUpListeners() {
     //     console.log('Origin of this even was:'+ev.target.innerText);
     // });
     // document.addEventListener("click", ev => {console.log('Clicked anywhere in the document');})
+    const mySlider = document.querySelector("#myRange");
+    mySlider.mysecret = 42;
+    mySlider.oninput = onSliderInput;
+    document.getElementById("myRange2").oninput = onSliderInput;
+}
 
+function onSliderInput(ev) {
+    console.log("My slider value is:"+this.value);
+    console.log("My slider target value is:"+ev.target.value);
+    console.log("My slider current target value is:"+ev.currentTarget.value);
+    console.log("I know the secret of this! "+this.mysecret);
+    // document.querySelector(".display").innerText = ev.target.value;
+    state.result = ev.target.value;
+    renderView();
 }
 
 function renderView() {
