@@ -1,7 +1,8 @@
 const state = {
     result: 0,
     current: "",
-    prev: ""
+    prev: "",
+    action: ""
 };
 
 function main() {
@@ -25,6 +26,17 @@ function setUpListeners() {
     //upListener
     const myMCel = document.querySelector("#mkey-MC");
     myMCel.onmouseup = (ev) => {console.log('You Released'+ev.target.innerText)};
+
+    const h1 = document.querySelector("h1");
+    h1.addEventListener("click", ev => {console.log('Clicked h1');});
+    h1.addEventListener("click", ev => {console.log('Clicked h1 and doing more');})
+    document.querySelector('header').addEventListener("click", ev => {console.log('clicked on header')});
+    document.body.addEventListener("click", ev => {
+        console.log('Clicked body  anywhere in the document');
+        console.log('Origin of this even was:'+ev.target.innerText);
+    });
+    document.addEventListener("click", ev => {console.log('Clicked anywhere in the document');})
+
 }
 
 function renderView() {
@@ -99,5 +111,8 @@ function onMouseDown(event) {
     renderView();
 }
 
+function onHeaderClick() {
+    console.log('you clicked on header 2');
+}
 main();
 
