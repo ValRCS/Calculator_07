@@ -27,15 +27,16 @@ function setUpListeners() {
     const myMCel = document.querySelector("#mkey-MC");
     myMCel.onmouseup = (ev) => {console.log('You Released'+ev.target.innerText)};
 
-    const h1 = document.querySelector("h1");
-    h1.addEventListener("click", ev => {console.log('Clicked h1');});
-    h1.addEventListener("click", ev => {console.log('Clicked h1 and doing more');})
-    document.querySelector('header').addEventListener("click", ev => {console.log('clicked on header')});
-    document.body.addEventListener("click", ev => {
-        console.log('Clicked body  anywhere in the document');
-        console.log('Origin of this even was:'+ev.target.innerText);
-    });
-    document.addEventListener("click", ev => {console.log('Clicked anywhere in the document');})
+    //FIXME better to just delete unused code and let git handle revisions
+    // const h1 = document.querySelector("h1");
+    // h1.addEventListener("click", ev => {console.log('Clicked h1');});
+    // h1.addEventListener("click", ev => {console.log('Clicked h1 and doing more');})
+    // document.querySelector('header').addEventListener("click", ev => {console.log('clicked on header')});
+    // document.body.addEventListener("click", ev => {
+    //     console.log('Clicked body  anywhere in the document');
+    //     console.log('Origin of this even was:'+ev.target.innerText);
+    // });
+    // document.addEventListener("click", ev => {console.log('Clicked anywhere in the document');})
 
 }
 
