@@ -10,6 +10,11 @@ function main() {
     console.log("Starting Calculator");
     renderView();
     setUpListeners();
+    // $("button").css("background-color", "red");
+    // $("button").text("Badac");
+    // $("button").click(ev => {console.log("Jquery event"+ev.target.id);})
+    // $("button").removeClass("btn");
+    // $("button").addClass("my new cool classes");
 }
 
 function setUpListeners() {
@@ -171,5 +176,6 @@ function onMouseDown(event) {
 function onHeaderClick() {
     console.log('you clicked on header 2');
 }
+
 main();
 
