@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Tester</title>
+    <script src="vendor/Vue/vue.js"></script>
+    <script src="scripts/v-main.js" defer></script>
+</head>
+<body>
+    <header><h1>Vue Tester</h1></header>
+    <!-- Vue App lives within div with id app -->
+    <div id="app">
+        <p>{{ message }}</p>
+        <input v-model="message">
+        <hr>
+        <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">Reverse Message</button>
+        <hr>
+        {{ todos[0].text }}
+        <ul>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ul>
+        <hr>
+        <div>
+            <span v-bind:title="dynamictitle">
+                Hover your mouse over me for a few seconds
+                to see my dynamically bound title!
+            </span>
+        </div>
+        <hr>
+
+        <div v-if="seenval">Now you see me</div>
+    </div>
+    <!-- Vue App ends here -->
+    <footer title="This was created in 2019">(C) 2019</footer>
+</body>
+</html>
